@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+
+    <ul class="nav-links" id="primary-navigation">
+      <li><a href="#" data-section="carousel">Carousel</a></li>
+      <li><a href="#" data-section="quiz">Quiz</a></li>
+      <li><a href="#" data-section="joke">Jokes</a></li>
+    </ul>
+
+    <h1 class="title">🌐Interactive Explorer</h1>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </nav>
+
+  <main>
+    <!-- Carousel -->
+    <section id="carousel" class="card active">
+      <h2>Image Carousel</h2>
+      <div class="carousel">
+        <img id="carousel-img" src="https://picsum.photos/id/1015/600/300" alt="carousel">
+      </div>
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="card">
+      <h2>Quiz</h2>
+      <p id="quiz-question">Loading question...</p>
+      <div id="quiz-options"></div>
+      <p id="quiz-result"></p>
+      <button id="prev-question">⬅️ Previous</button>
+      <button id="next-question">➡️ Next</button>
+    </section>
+
+    <!-- Joke -->
+    <section id="joke" class="card">
+      <h2>Random Joke</h2>
+      <p id="joke-text">Click to get a joke!</p>
+      <button id="joke-btn">Get Joke</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
