@@ -1,0 +1,144 @@
+/* Default Bright Theme */
+:root {
+  --bg: #f0f9ff;
+  --text: #1e293b;
+  --card-bg: #ffffff;
+  --card-border: #38bdf8;
+  --button-bg: #06b6d4;
+  --button-hover: #0ea5e9;
+}
+
+/* Night Theme */
+body.dark {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --card-bg: #1e293b;
+  --card-border: #38bdf8;
+  --button-bg: #334155;
+  --button-hover: #475569;
+}
+
+/* Global */
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: background .4s, color .4s;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  background: var(--button-bg);
+  padding: .6rem 1rem;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Title highlight */
+.title {
+  color: #ffd700;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 auto 0 0; /* push title to center-left */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: white; 
+  text-shadow: 2px 2px 6px rgba(0,0,0,.3);
+}
+
+/* Theme button */
+#theme-toggle {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Dropdown menu: hidden by default on ALL sizes */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: .5rem;
+  display: none;
+  flex-direction: column;
+  gap: .4rem;
+
+  position: absolute;
+  top: 100%;
+  left: .5rem;
+  background: var(--button-bg);
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.25);
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.nav-links.show { display: flex; }
+
+.nav-links a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: .5rem .75rem;
+  border-radius: 8px;
+  transition: background .25s;
+}
+.nav-links a:hover, .nav-links a.active { background: var(--button-hover); }
+
+/* Cards */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,.2);
+  transition: background .4s, color .4s;
+  display: none;
+  width: 90%;
+  max-width: 600px;
+}
+.card.active { display: block; }
+
+/* Carousel */
+.carousel { text-align: center; margin-bottom: 1rem; }
+.carousel img { width: 100%; border-radius: 10px; }
+
+/* Buttons */
+button {
+  background: var(--button-bg);
+  color: #fff;
+  border: none;
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .25s;
+  margin: .25rem;
+}
+button:hover { background: var(--button-hover); }
+
+/* Optional: wider screens – only typography tweaks */
+@media (min-width: 900px) {
+  .title { font-size: 1.6rem; }
+}
